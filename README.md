@@ -17,13 +17,15 @@ meteor add gkrizek:aws
 Credentials
 -----------
 **Client**
+
 You should never store any type of credentials in version control. You should leverage Meteor's [settings.json](https://docs.meteor.com/api/core.html#Meteor-settings) file and make sure it's not versioned.
 
 *Example:*
+
 settings.json:
 ```
 {
-  "awsAccessKeyId": "<AWS_ACCESS_KEY",
+  "awsAccessKeyId": "<AWS_ACCESS_KEY>",
   "awsSecretKey": "<AWS_SECRET_KEY>"
 }
 ```
@@ -36,4 +38,25 @@ AWS.config.update({
 ```
 
 **Server**
+
+On your server, you should either set your AWS credentials as environment variables or in the AWS credentials file.
+
+The credentials file should be located in your application owner's home diretory, under the `.aws` folder. (`~/.aws/credentials`)
+
+~/.aws/credentials
+```
+[default]
+aws_access_key_id = <AWS_ACCESS_KEY>
+aws_secret_access_key = <AWS_SECRET_KEY>
+```
+
+*Using a server role*
+
+~/.aws/credentials
+```
+[profile <PROFILE_NAME>]
+role_arn = arn:aws:iam::<ACCOUNT_NUMBER>:role/<ROLE_NAME>
+source_profile = default
+```
+
 
