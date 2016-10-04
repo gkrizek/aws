@@ -5,6 +5,8 @@ Amazon Web Services SDK for Meteor
 
 Follow the [documentation](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/index.html) on how to use it for both client and server.
 
+Minified AWS-SDK for the browser is included in the package manually to reduce unnecessary size from a submodule. 
+
 Installation
 ------------
 

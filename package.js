@@ -1,7 +1,8 @@
 Package.describe({
   summary: "Amazon Web Services SDK for Meteor",
   version: '0.0.1',
-  name: 'gkrizek:aws'
+  name: 'gkrizek:aws',
+  git: 'https://github.com/gkrizek/aws.git'
 });
 
 Npm.depends({
@@ -17,4 +18,9 @@ Package.on_use(function (api) {
   api.add_files([
     'server.js'
   ], 'server');
+
+  api.add_files([
+    'aws-sdk.min.js',
+    'client.js'
+  ], 'client');
 });
