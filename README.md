@@ -13,3 +13,27 @@ Installation
 ```
 meteor add gkrizek:aws
 ```
+
+Credentials
+-----------
+**Client**
+You should never store any type of credentials in version control. You should leverage Meteor's [settings.json](https://docs.meteor.com/api/core.html#Meteor-settings) file and make sure it's not versioned.
+
+*Example:*
+settings.json:
+```
+{
+  "awsAccessKeyId": "<AWS_ACCESS_KEY",
+  "awsSecretKey": "<AWS_SECRET_KEY>"
+}
+```
+Using them in client code:
+```
+AWS.config.update({
+	accessKeyId: Meteor.settings.awsAccessKeyId, 
+	secretAccessKey: Meteor.settings.awsSecretKey
+});
+```
+
+**Server**
+

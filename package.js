@@ -15,11 +15,11 @@ Package.on_use(function (api) {
 
   api.export('AWS');
 
-  api.add_files([
+  api.addFiles([
     'server.js'
   ], 'server');
 
-  api.add_files([
+  api.addFiles([
     'aws-sdk.min.js',
     'client.js'
   ], 'client');
