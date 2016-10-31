@@ -10,9 +10,7 @@ Minified AWS-SDK for the browser is included in the package manually to reduce u
 Installation
 ------------
 
-```
-meteor add gkrizek:aws
-```
+`NOT PUBLISHED YET`
 
 Credentials
 -----------
